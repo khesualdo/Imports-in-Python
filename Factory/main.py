@@ -1,40 +1,45 @@
-# import machines
-# machines.machinesFun()
-# machines.machinesDoWorkFun()
+import machines
 
-# import machines as mac
-# mac.machinesFun()
-# mac.machinesDoWorkFun()
+machines.machinesFun() # Hello from Machines Module
+machines.machinesDoWorkFun() # Machines Do Work
 
-# from machines import machinesDoWorkFun
-# machinesFun() # Error
-# machinesDoWorkFun()
+import machines as mac
 
-# from machines import *
-# machinesFun()
-# machinesDoWorkFun()
+mac.machinesFun() # Hello from Machines Module
+mac.machinesDoWorkFun() # Machines Do Work
 
+from machines import machinesDoWorkFun
 
+machinesFun() # Error
+machinesDoWorkFun() # Machines Do Work
+
+from machines import *
+
+machinesFun() # Hello from Machines Module
+machinesDoWorkFun() # Machines Do Work
 
 # ================================== Packages ==================================
 
-# import Workers.labourerWorkers
-# Workers.labourerWorkers.labourerWorkersFun()
+import Workers.labourerWorkers
 
-# from Workers.labourerWorkers import labourerWorkersFun
-# labourerWorkersFun()
+Workers.labourerWorkers.labourerWorkersFun() # Hello from Lobourer Workers Module
 
-# from Workers import labourerWorkers
-# labourerWorkers.labourerWorkersFun()
+from Workers.labourerWorkers import labourerWorkersFun
 
+labourerWorkersFun() # Hello from Lobourer Workers Module
 
+from Workers import labourerWorkers
 
+labourerWorkers.labourerWorkersFun() # Hello from Lobourer Workers Module
 
-# import Workers.Managers.hiringManagers
-# Workers.Managers.hiringManagers.hiringManagersFun()
+import Workers.Managers.hiringManagers
 
-# from Workers.Managers.hiringManagers import hiringManagersFun
-# hiringManagersFun()
+Workers.Managers.hiringManagers.hiringManagersFun() # Hello from Hiring Managers Module
 
-# from Workers.Managers import hiringManagers
-# hiringManagers.hiringManagersFun()
+from Workers.Managers.hiringManagers import hiringManagersFun
+
+hiringManagersFun() # Hello from Hiring Managers Module
+
+from Workers.Managers import hiringManagers
+
+hiringManagers.hiringManagersFun() # Hello from Hiring Managers Module

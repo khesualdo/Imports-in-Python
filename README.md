@@ -1,8 +1,6 @@
 # Imports in Python
----
 
 ## Prerequisites
----
 
 ### Namespace
 
@@ -30,7 +28,6 @@ More on the `__init__.py` file in the **Packages (with the `__init__.py` file) a
 
 
 ## Regular Imports
----
 
 Assume the following file structure.
 
@@ -89,7 +86,7 @@ siblingModuleFunTwo() # Hello from siblingModuleFunTwo
 ```
 
 ## Local Imports
----
+
 Importing modules at the top of the script, is importing the module into the global scope, which means that any functions will be able to use it. 
 
 A **local import** is when you import a module into local scope, which means that it exists only within the block that it was loaded in.
@@ -114,7 +111,6 @@ globalModule.someFunction()
 ```
 
 ## Optional Imports
----
 
 **Optional imports** are used when you have a preferred module or package that you want to use, but you also want a fallback in case it something goes wrong.
 
@@ -132,7 +128,6 @@ except ImportError:
 ```
 
 ## Circular Imports
----
 
 **Circular imports** happen when you create two modules that import each other.
 
@@ -162,7 +157,6 @@ Bfun()
 If you run either of these modules, you should receive an `AttributeError`. This happens because both modules are attempting to import each other. Basically what’s happening here is that `A.py` is trying to import `B.py`, but it can’t do that because `B.py` is attempting to import `A.py`, which is already being executed. To prevent this kind of thing from happening, refactor your code.
 
 ## Shadowed imports
----
 
 **Shadow imports** happen when the programmer creates a module with the same name as a standard Python module.
 
@@ -180,7 +174,6 @@ square_root(72)
 When you run a Python script, the first place Python looks for a module called `math` is in the currently running script’s directory. In this case, it finds the module we’re running and tries to use that. But our module doesn’t have a function or attribute called `sqrt`, so an `AttributeError` is raised.
 
 ## Packages (without the `__init__.py` file)
----
 
 Assume the following file structure.
 ```sh
@@ -259,51 +252,50 @@ subSubA.subSubAFunTwo() # Hello from subSubAFunTwo
 ```
 
 ## Packages (with the `__init__.py` file) and Relative Imports
----
 
 ### `__init__.py`
 
- There are two main reasons for using the `__init__.py` file.
+There are two main reasons for using the `__init__.py` file.
 
-##### 1. For convenience,  other users will not need to know your module's exact location in the package hierarchy.
+1. For convenience,  other users will not need to know your module's exact location in the package hierarchy.
 
-```sh
-someDir/
-	__init__.py
-	A.py
-	B.py
-	...
-	Z.py
-```
-```python
-# A.py
+    ```sh
+    someDir/
+    	__init__.py
+    	A.py
+    	B.py
+    	...
+    	Z.py
+    ```
+    ```python
+    # A.py
 
-def add(x, y):
-	return x + y
-```
+    def add(x, y):
+    	return x + y
+    ```
 
-```python
-# __init__.py
+    ```python
+    # __init__.py
 
-from A import *
-from B import *
-...
-from Z import *
-```
+    from A import *
+    from B import *
+    ...
+    from Z import *
+    ```
 
-Then others can call `add(x, y)` , without knowing `A.py` exists
+    Then others can call `add(x, y)` , without knowing `A.py` exists
 
-```python
-from someDir import add
-```
+    ```python
+    from someDir import add
+    ```
 
-Without `__init__.py`
+    Without `__init__.py`
 
-```python
-from someDir.A import add
-```
+    ```python
+    from someDir.A import add
+    ```
 
-##### 2. If you want something to be initialized as soon as the package gets executed.
+2. If you want something to be initialized as soon as the package gets executed.
 
 ### Relative Imports
 
@@ -388,6 +380,7 @@ From the above, we can observe that it's almost as though `__init__.py` converts
 
 To access functions of `subA.py` in `subSubA.py`.
 Only works if the `__name__` variable of `subSubA.py` is not `'__main__'`
+
 ```python
 # subSubA.py
 

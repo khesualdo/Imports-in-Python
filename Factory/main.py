@@ -10,7 +10,7 @@ mac.machinesDoWorkFun() # Machines Do Work
 
 from machines import machinesDoWorkFun
 
-machinesFun() # Error
+machinesFun() # Error -- noqa
 machinesDoWorkFun() # Machines Do Work
 
 from machines import *
